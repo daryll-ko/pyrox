@@ -1,3 +1,8 @@
+struct Node {
+    val: i64,
+}
+
 fn main() {
-    println!("1 + 1 = {}", 1 + 1);
+    let n1 = Node { val: 2024 };
+    println!("{}", n1.val);
 }
