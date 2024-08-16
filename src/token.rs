@@ -1,3 +1,5 @@
+use std::fmt::Display;
+
 pub enum TokenKind {
     /* Delimiters */
     LeftParen,  // (
@@ -31,7 +33,7 @@ pub enum TokenKind {
     And,  // and
     Or,   // or
 
-    /* control flow */
+    /* Control Flow */
     If,        // if
     Nyoom,     // nyoom
     Otherwise, // otherwise
@@ -51,22 +53,31 @@ pub enum TokenKind {
 
     /* Printing */
     Whats, // what's
+
+    /* End of File */
+    EOF,
 }
 
 pub struct Token<'a> {
     kind: TokenKind,
     lexeme: &'a str,
     literal: (),
-    line_number: u32,
+    line_number: usize,
 }
 
 impl Token<'_> {
-    pub fn new(kind: TokenKind, lexeme: &str, literal: (), line_number: u32) -> Token {
+    pub fn new(kind: TokenKind, lexeme: &str, literal: (), line_number: usize) -> Token {
         Token {
             kind,
             lexeme,
             literal,
             line_number,
         }
+    }
+}
+
+impl Display for Token<'_> {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{}", self.lexeme)
     }
 }

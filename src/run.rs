@@ -33,7 +33,7 @@ pub fn run_repl() -> () {
 }
 
 fn run(code: &str) -> () {
-    let scanner = Scanner::new(code);
+    let mut scanner = Scanner::new(code);
     let tokens = scanner.scan_for_tokens();
 
     for token in tokens {
