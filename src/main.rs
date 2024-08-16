@@ -1,22 +1,23 @@
-pub mod llist;
+use std::env;
 
 fn main() {
-    let n1 = llist::Node {
-        left: Box::new(llist::Nil),
-        val: 2024,
-        right: Box::new(llist::Nil),
-    };
+    let args: Vec<String> = env::args().collect();
 
-    if let llist::Node {
-        left: _,
-        val,
-        right: _,
-    } = n1
-    {
-        println!("{}", val);
+    if args.len() > 2 {
+        panic!("too many arguments")
+    } else if args.len() == 2 {
+        run_file();
+        let file_path = &args[1];
+        println!("{file_path}")
+    } else {
+        run_repl();
     }
+}
 
-    if let Some(res) = n1.find(2024) {
-        println!("{}", res);
-    }
+fn run_file() -> () {
+    println!("Running file...")
+}
+
+fn run_repl() -> () {
+    println!("Running REPL...")
 }
