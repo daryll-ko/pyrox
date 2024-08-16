@@ -30,6 +30,6 @@ impl Scanner<'_> {
         tokens
     }
     pub fn at_end(&self) -> bool {
-        true
+        self.current >= self.code.len()
     }
 }
