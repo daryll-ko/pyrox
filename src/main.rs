@@ -1,5 +1,6 @@
 use std::env;
 
+pub mod error;
 pub mod run;
 pub mod scanner;
 pub mod token;
