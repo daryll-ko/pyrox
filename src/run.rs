@@ -34,5 +34,9 @@ pub fn run_repl() -> () {
 
 fn run(code: &str) -> () {
     let scanner = Scanner::new(code);
-    println!("Running:\n{code}")
+    let tokens = scanner.scan_for_tokens();
+
+    for token in tokens {
+        println!("{token}")
+    }
 }

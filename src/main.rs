@@ -2,6 +2,7 @@ use std::env;
 
 pub mod run;
 pub mod scanner;
+pub mod token;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
