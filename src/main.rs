@@ -1,6 +1,7 @@
 use std::env;
 
 pub mod run;
+pub mod scanner;
 
 fn main() {
     let args: Vec<String> = env::args().collect();

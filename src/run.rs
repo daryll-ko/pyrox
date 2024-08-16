@@ -1,6 +1,8 @@
 use std::fs;
 use std::io::{self, Write};
 
+use crate::scanner::Scanner;
+
 pub fn run_file(file_path: &str) -> () {
     println!("Running file [ {file_path} ]...");
     let contents =
@@ -31,5 +33,6 @@ pub fn run_repl() -> () {
 }
 
 fn run(code: &str) -> () {
+    let scanner = Scanner::new(code);
     println!("Running:\n{code}")
 }
