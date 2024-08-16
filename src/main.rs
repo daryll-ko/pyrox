@@ -1,6 +1,8 @@
 use crate::LList::{Nil, Node};
 
-// we need enum to define Nil (?)
+// we need enum to define Nil?
+// tried isolating Node, did not work
+
 enum LList {
     Node {
         left: Box<LList>,
