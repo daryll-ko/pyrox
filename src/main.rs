@@ -6,16 +6,15 @@ fn main() {
     if args.len() > 2 {
         panic!("too many arguments")
     } else if args.len() == 2 {
-        run_file();
         let file_path = &args[1];
-        println!("{file_path}")
+        run_file(&file_path);
     } else {
         run_repl();
     }
 }
 
-fn run_file() -> () {
-    println!("Running file...")
+fn run_file(file_path: &String) -> () {
+    println!("Running file [{file_path}]...")
 }
 
 fn run_repl() -> () {
